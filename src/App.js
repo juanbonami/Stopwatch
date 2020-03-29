@@ -17,19 +17,12 @@ export default class App extends Component {
 //     }, 1000)
 // }
 
-// componentDidMount() {
-//     this.myInterval = setInterval(()=> {
-//         this.setState({
-//               counter: this.state.counter +1
-//             })
-//     }, 1000)
-    
-//   }
+
 
 
   startPressed = () => {
     this.setState({
-      counter: current += setInterval(()=>{
+      counter: setInterval(()=>{
         this.setState({
           counter: this.state.counter + 1
         })
@@ -58,7 +51,6 @@ export default class App extends Component {
 
 
   render() {
-    let current = 0;
     return (
       <div className="App">
         <h1>{this.state.counter}</h1>
