@@ -1,62 +1,59 @@
+// https://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+// imports react library
 import React, { Component } from 'react'
 
+// class App extends class Component from the react library
 export default class App extends Component {
   constructor(props) {
     super(props)
 
+    // sets state object
     this.state = {
       counter: 0,
       paused: true
     }
   }
 
-
-//   clicks = () => {
-//     setInterval(()=> {
-//       this.state.counter = this.state.counter + 1
-//     }, 1000)
-// }
-
-
-
-
+  // Start button function 
   startPressed = () => {
-    this.setState({
-      counter: setInterval(()=>{
+    // this.current is a property that will be used later to stop setInterval(). setInterval takes 2 arguments, a function and milliseconds
+    // setInterval takes a nameless function that changes the state w 1000 milliseconds interval
+    this.current = setInterval(()=>{  // setInterval executes the nameless function once every 1 second
         this.setState({
-          counter: this.state.counter + 1
+          counter: this.state.counter + 1,
+          paused: false
         })
-      }, 1000)
-    })
+      }, 1000) // 1000 milliseconds = 1 second
+    // return this.current
+    return this.current
   }
 
-  // startPressed = () => {
-  //   this.setState({
-  //     counter: setInterval(this.state.counter = this.state.counter + 1)
-  //   })
-  // }
-
-  
-
-  
-
-  pausePressed = () => {
+  // Reset button 
+  resetPressed = () => {
+    // changes the state using the JSX method setState()
     this.setState({
-      counter: 4
-    })
+    // counter will be set back to 0 and paused back to a boolean value of true
+      counter: 0,
+      paused: true
+  })
+  // The clearTimeout() method clears a timer. Times out this.current from the startPressed.
+clearTimeout(this.current)
   }
+    
 
+
+    
   
 
-
-
+  // the render method comes from the class Component we extended
   render() {
     return (
       <div className="App">
         <h1>{this.state.counter}</h1>
-        <button className="reset">Reset</button>
+        <button className="reset" onClick={this.resetPressed}>Reset</button>
         <button className="start" onClick={this.startPressed}>Start</button>
-        <button className="pause">Pause</button>
+        <button className="pause" onClick={this.pausePressed}>Pause</button>
       </div>
     )
   }
