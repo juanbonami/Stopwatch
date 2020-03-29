@@ -33,7 +33,7 @@ export default class App extends Component {
     pausePressed = () => {
       // checks if paused is a boolean value of false, if that condition is met the if block will execute
       if (this.state.paused === false) {
-        // chages state, changes paused to a boolean value of true
+        // changes state, changes paused to a boolean value of true
         this.setState({
           paused: true
         })
