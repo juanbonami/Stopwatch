@@ -3,6 +3,7 @@
 
 // imports react library
 import React, { Component } from 'react'
+import './App.css'
 
 // class App extends class Component from the react library
 export default class App extends Component {

@@ -1,4 +1,59 @@
+body {
+    background-color: rgb(58, 139, 206);
+}
+
 .App {
     display: flex;
-    justify-content: center;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 200px; */
+  /* border: 3px solid green; */
+  
+}
+
+.App .start {
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(21, 175, 46);
+    font-family: serif;
+    font-weight: bold;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.76);
+    font-size: larger;
+    height: 70px;
+    width: 70px;
+    margin: 20px 20px 20px 20px;
+}
+
+.App .pause {
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(202, 52, 52);
+    font-family: serif;
+    font-weight: bold;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.76);
+    font-size: larger;
+    height: 70px;
+    width: 70px;
+    margin: 20px 20px 20px 20px;
+}
+
+.App .reset {
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(192, 190, 45);
+    font-family: serif;
+    font-weight: bolder;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.76);
+    font-size: larger;
+    height: 70px;
+    width: 70px;
+    margin: 20px 20px 20px 20px;
+}
+
+h1 {
+    /* margin: 100px 80px 20px 20px; */
+    height: 100px;
+    width: 100px;
+    font-size: 100px;
+    text-shadow: 3px 3px 3px white;
 }
