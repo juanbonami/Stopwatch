@@ -1,4 +1,5 @@
 // https://www.w3schools.com/jsref/met_win_clearinterval.asp
+// https://www.youtube.com/watch?v=NAx76xx40jM
 
 // imports react library
 import React, { Component } from 'react'
