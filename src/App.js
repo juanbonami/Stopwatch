@@ -15,19 +15,29 @@ export default class App extends Component {
     }
   }
 
-  // Start button function 
-  startPressed = () => {
-    // this.current is a property that will be used later to stop setInterval(). setInterval takes 2 arguments, a function and milliseconds
+  // *** purpose of this function is to reduce redundant code. Function is used later in startPressed() and pausePressed() ***
+  changeStateWithInterval = () => {
+    // setInterval takes 2 arguments, function and milliseconds
     // setInterval takes a nameless function that changes the state w 1000 milliseconds interval
-    this.current = setInterval(()=>{  // setInterval executes the nameless function once every 1 second
+      return setInterval(()=>{  // setInterval executes the nameless function once every 1 second
         this.setState({
           counter: this.state.counter + 1,
           paused: false
         })
-      }, 1000) // 1000 milliseconds = 1 second
-    // return this.current
-    return this.current
+        // 1000 milliseconds = 1 second
+      }, 1000)
+    }
+
+
+
+
+  // Start button function 
+  startPressed = () => {
+    // this.current is a property that will be used later to stop setInterval() within stopInterval()
+    this.current = this.changeStateWithInterval() 
   }
+
+
 
     // Pause button function
     pausePressed = () => {
@@ -41,12 +51,11 @@ export default class App extends Component {
         clearInterval(this.current)
       }else {
         // returns the startPressed function
-        return this.startPressed
+          this.current = this.changeStateWithInterval()
         }
       }
 
-
-
+     
   // Reset button 
   resetPressed = () => {
     // changes the state using the JSX method setState()
@@ -62,8 +71,6 @@ clearTimeout(this.current)
 
 
     
-  
-
   // the render method comes from the class Component we extended
   render() {
     return (
